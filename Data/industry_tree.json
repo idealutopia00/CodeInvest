@@ -1,0 +1,2186 @@
+[
+  {
+    "name": "TMT",
+    "children": [
+      {
+        "name": "传媒",
+        "children": [
+          {
+            "name": "出版",
+            "children": [
+              {
+                "name": "大众出版",
+                "children": []
+              },
+              {
+                "name": "教育出版",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "电视广播Ⅱ",
+            "children": [
+              {
+                "name": "电视广播Ⅲ",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "广告营销",
+            "children": [
+              {
+                "name": "广告媒体",
+                "children": []
+              },
+              {
+                "name": "营销代理",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "数字媒体",
+            "children": [
+              {
+                "name": "门户网站",
+                "children": []
+              },
+              {
+                "name": "其他数字媒体",
+                "children": []
+              },
+              {
+                "name": "视频媒体",
+                "children": []
+              },
+              {
+                "name": "图片媒体",
+                "children": []
+              },
+              {
+                "name": "文字媒体",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "影视院线",
+            "children": [
+              {
+                "name": "影视动漫制作",
+                "children": []
+              },
+              {
+                "name": "院线",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "游戏Ⅱ",
+            "children": [
+              {
+                "name": "游戏Ⅲ",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "电子",
+        "children": [
+          {
+            "name": "半导体",
+            "children": [
+              {
+                "name": "半导体材料",
+                "children": []
+              },
+              {
+                "name": "半导体设备",
+                "children": []
+              },
+              {
+                "name": "分立器件",
+                "children": []
+              },
+              {
+                "name": "集成电路封测",
+                "children": []
+              },
+              {
+                "name": "集成电路制造",
+                "children": []
+              },
+              {
+                "name": "模拟芯片设计",
+                "children": []
+              },
+              {
+                "name": "数字芯片设计",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "电子化学品Ⅱ",
+            "children": [
+              {
+                "name": "电子化学品Ⅲ",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "光学光电子",
+            "children": [
+              {
+                "name": "LED",
+                "children": []
+              },
+              {
+                "name": "光学元件",
+                "children": []
+              },
+              {
+                "name": "面板",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "其他电子Ⅱ",
+            "children": [
+              {
+                "name": "其他电子Ⅲ",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "消费电子",
+            "children": [
+              {
+                "name": "品牌消费电子",
+                "children": []
+              },
+              {
+                "name": "消费电子零部件及组装",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "元件",
+            "children": [
+              {
+                "name": "被动元件",
+                "children": []
+              },
+              {
+                "name": "印制电路板",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "计算机",
+        "children": [
+          {
+            "name": "IT服务Ⅱ",
+            "children": [
+              {
+                "name": "IT服务Ⅲ",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "计算机设备",
+            "children": [
+              {
+                "name": "安防设备",
+                "children": []
+              },
+              {
+                "name": "其他计算机设备",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "软件开发",
+            "children": [
+              {
+                "name": "垂直应用软件",
+                "children": []
+              },
+              {
+                "name": "横向通用软件",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "通信",
+        "children": [
+          {
+            "name": "通信服务",
+            "children": [
+              {
+                "name": "电信运营商",
+                "children": []
+              },
+              {
+                "name": "通信工程及服务",
+                "children": []
+              },
+              {
+                "name": "通信应用增值服务",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "通信设备",
+            "children": [
+              {
+                "name": "其他通信设备",
+                "children": []
+              },
+              {
+                "name": "通信网络设备及器件",
+                "children": []
+              },
+              {
+                "name": "通信线缆及配套",
+                "children": []
+              },
+              {
+                "name": "通信终端及配件",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "工业",
+    "children": [
+      {
+        "name": "电力设备",
+        "children": [
+          {
+            "name": "电池",
+            "children": [
+              {
+                "name": "电池化学品",
+                "children": []
+              },
+              {
+                "name": "锂电池",
+                "children": []
+              },
+              {
+                "name": "锂电专用设备",
+                "children": []
+              },
+              {
+                "name": "燃料电池",
+                "children": []
+              },
+              {
+                "name": "蓄电池及其他电池",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "电机Ⅱ",
+            "children": [
+              {
+                "name": "电机Ⅲ",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "电网设备",
+            "children": [
+              {
+                "name": "电工仪器仪表",
+                "children": []
+              },
+              {
+                "name": "电网自动化设备",
+                "children": []
+              },
+              {
+                "name": "配电设备",
+                "children": []
+              },
+              {
+                "name": "输变电设备",
+                "children": []
+              },
+              {
+                "name": "线缆部件及其他",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "风电设备",
+            "children": [
+              {
+                "name": "风电零部件",
+                "children": []
+              },
+              {
+                "name": "风电整机",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "光伏设备",
+            "children": [
+              {
+                "name": "光伏电池组件",
+                "children": []
+              },
+              {
+                "name": "光伏辅材",
+                "children": []
+              },
+              {
+                "name": "光伏加工设备",
+                "children": []
+              },
+              {
+                "name": "硅料硅片",
+                "children": []
+              },
+              {
+                "name": "逆变器",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "其他电源设备Ⅱ",
+            "children": [
+              {
+                "name": "火电设备",
+                "children": []
+              },
+              {
+                "name": "其他电源设备Ⅲ",
+                "children": []
+              },
+              {
+                "name": "综合电力设备商",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "纺织服饰",
+        "children": [
+          {
+            "name": "纺织制造",
+            "children": [
+              {
+                "name": "纺织鞋类制造",
+                "children": []
+              },
+              {
+                "name": "辅料",
+                "children": []
+              },
+              {
+                "name": "棉纺",
+                "children": []
+              },
+              {
+                "name": "其他纺织",
+                "children": []
+              },
+              {
+                "name": "印染",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "服装家纺",
+            "children": [
+              {
+                "name": "非运动服装",
+                "children": []
+              },
+              {
+                "name": "家纺",
+                "children": []
+              },
+              {
+                "name": "鞋帽及其他",
+                "children": []
+              },
+              {
+                "name": "运动服装",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "饰品",
+            "children": [
+              {
+                "name": "其他饰品",
+                "children": []
+              },
+              {
+                "name": "钟表珠宝",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "国防军工",
+        "children": [
+          {
+            "name": "地面兵装Ⅱ",
+            "children": [
+              {
+                "name": "地面兵装Ⅲ",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "航海装备Ⅱ",
+            "children": [
+              {
+                "name": "航海装备Ⅲ",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "航空装备Ⅱ",
+            "children": [
+              {
+                "name": "航空装备Ⅲ",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "航天装备Ⅱ",
+            "children": [
+              {
+                "name": "航天装备Ⅲ",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "军工电子Ⅱ",
+            "children": [
+              {
+                "name": "军工电子Ⅲ",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "机械设备",
+        "children": [
+          {
+            "name": "工程机械",
+            "children": [
+              {
+                "name": "工程机械器件",
+                "children": []
+              },
+              {
+                "name": "工程机械整机",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "轨交设备Ⅱ",
+            "children": [
+              {
+                "name": "轨交设备Ⅲ",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "通用设备",
+            "children": [
+              {
+                "name": "机床工具",
+                "children": []
+              },
+              {
+                "name": "金属制品",
+                "children": []
+              },
+              {
+                "name": "磨具磨料",
+                "children": []
+              },
+              {
+                "name": "其他通用设备",
+                "children": []
+              },
+              {
+                "name": "仪器仪表",
+                "children": []
+              },
+              {
+                "name": "制冷空调设备",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "专用设备",
+            "children": [
+              {
+                "name": "纺织服装设备",
+                "children": []
+              },
+              {
+                "name": "楼宇设备",
+                "children": []
+              },
+              {
+                "name": "能源及重型设备",
+                "children": []
+              },
+              {
+                "name": "农用机械",
+                "children": []
+              },
+              {
+                "name": "其他专用设备",
+                "children": []
+              },
+              {
+                "name": "印刷包装机械",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "自动化设备",
+            "children": [
+              {
+                "name": "工控设备",
+                "children": []
+              },
+              {
+                "name": "机器人",
+                "children": []
+              },
+              {
+                "name": "激光设备",
+                "children": []
+              },
+              {
+                "name": "其他自动化设备",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "基础化工",
+        "children": [
+          {
+            "name": "非金属材料Ⅱ",
+            "children": [
+              {
+                "name": "非金属材料Ⅲ",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "化学纤维",
+            "children": [
+              {
+                "name": "氨纶",
+                "children": []
+              },
+              {
+                "name": "涤纶",
+                "children": []
+              },
+              {
+                "name": "锦纶",
+                "children": []
+              },
+              {
+                "name": "其他化学纤维",
+                "children": []
+              },
+              {
+                "name": "粘胶",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "化学原料",
+            "children": [
+              {
+                "name": "纯碱",
+                "children": []
+              },
+              {
+                "name": "氯碱",
+                "children": []
+              },
+              {
+                "name": "煤化工",
+                "children": []
+              },
+              {
+                "name": "其他化学原料",
+                "children": []
+              },
+              {
+                "name": "钛白粉",
+                "children": []
+              },
+              {
+                "name": "无机盐",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "化学制品",
+            "children": [
+              {
+                "name": "纺织化学制品",
+                "children": []
+              },
+              {
+                "name": "氟化工",
+                "children": []
+              },
+              {
+                "name": "胶黏剂及胶带",
+                "children": []
+              },
+              {
+                "name": "聚氨酯",
+                "children": []
+              },
+              {
+                "name": "民爆制品",
+                "children": []
+              },
+              {
+                "name": "其他化学制品",
+                "children": []
+              },
+              {
+                "name": "食品及饲料添加剂",
+                "children": []
+              },
+              {
+                "name": "涂料油墨",
+                "children": []
+              },
+              {
+                "name": "有机硅",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "农化制品",
+            "children": [
+              {
+                "name": "氮肥",
+                "children": []
+              },
+              {
+                "name": "复合肥",
+                "children": []
+              },
+              {
+                "name": "钾肥",
+                "children": []
+              },
+              {
+                "name": "磷肥及磷化工",
+                "children": []
+              },
+              {
+                "name": "农药",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "塑料",
+            "children": [
+              {
+                "name": "改性塑料",
+                "children": []
+              },
+              {
+                "name": "合成树脂",
+                "children": []
+              },
+              {
+                "name": "膜材料",
+                "children": []
+              },
+              {
+                "name": "其他塑料制品",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "橡胶",
+            "children": [
+              {
+                "name": "其他橡胶制品",
+                "children": []
+              },
+              {
+                "name": "炭黑",
+                "children": []
+              },
+              {
+                "name": "橡胶助剂",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "轻工制造",
+        "children": [
+          {
+            "name": "包装印刷",
+            "children": [
+              {
+                "name": "金属包装",
+                "children": []
+              },
+              {
+                "name": "塑料包装",
+                "children": []
+              },
+              {
+                "name": "印刷",
+                "children": []
+              },
+              {
+                "name": "纸包装",
+                "children": []
+              },
+              {
+                "name": "综合包装",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "家居用品",
+            "children": [
+              {
+                "name": "成品家居",
+                "children": []
+              },
+              {
+                "name": "瓷砖地板",
+                "children": []
+              },
+              {
+                "name": "定制家居",
+                "children": []
+              },
+              {
+                "name": "其他家居用品",
+                "children": []
+              },
+              {
+                "name": "卫浴制品",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "文娱用品",
+            "children": [
+              {
+                "name": "文化用品",
+                "children": []
+              },
+              {
+                "name": "娱乐用品",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "造纸",
+            "children": [
+              {
+                "name": "大宗用纸",
+                "children": []
+              },
+              {
+                "name": "特种纸",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "石油石化",
+        "children": [
+          {
+            "name": "炼化及贸易",
+            "children": [
+              {
+                "name": "炼油化工",
+                "children": []
+              },
+              {
+                "name": "其他石化",
+                "children": []
+              },
+              {
+                "name": "油品石化贸易",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "油服工程",
+            "children": [
+              {
+                "name": "油气及炼化工程",
+                "children": []
+              },
+              {
+                "name": "油田服务",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "油气开采Ⅱ",
+            "children": [
+              {
+                "name": "油气开采Ⅲ",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "建筑地产",
+    "children": [
+      {
+        "name": "房地产",
+        "children": [
+          {
+            "name": "房地产服务",
+            "children": [
+              {
+                "name": "房产租赁经纪",
+                "children": []
+              },
+              {
+                "name": "物业管理",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "房地产开发",
+            "children": [
+              {
+                "name": "产业地产",
+                "children": []
+              },
+              {
+                "name": "商业地产",
+                "children": []
+              },
+              {
+                "name": "住宅开发",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "建筑材料",
+        "children": [
+          {
+            "name": "玻璃玻纤",
+            "children": [
+              {
+                "name": "玻璃制造",
+                "children": []
+              },
+              {
+                "name": "玻纤制造",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "水泥",
+            "children": [
+              {
+                "name": "水泥制品",
+                "children": []
+              },
+              {
+                "name": "水泥制造",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "装修建材",
+            "children": [
+              {
+                "name": "防水材料",
+                "children": []
+              },
+              {
+                "name": "管材",
+                "children": []
+              },
+              {
+                "name": "耐火材料",
+                "children": []
+              },
+              {
+                "name": "其他建材",
+                "children": []
+              },
+              {
+                "name": "涂料",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "建筑装饰",
+        "children": [
+          {
+            "name": "房屋建设Ⅱ",
+            "children": [
+              {
+                "name": "房屋建设Ⅲ",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "工程咨询服务Ⅱ",
+            "children": [
+              {
+                "name": "工程咨询服务Ⅲ",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "基础建设",
+            "children": [
+              {
+                "name": "基建市政工程",
+                "children": []
+              },
+              {
+                "name": "园林工程",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "专业工程",
+            "children": [
+              {
+                "name": "钢结构",
+                "children": []
+              },
+              {
+                "name": "国际工程",
+                "children": []
+              },
+              {
+                "name": "化学工程",
+                "children": []
+              },
+              {
+                "name": "其他专业工程",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "装修装饰Ⅱ",
+            "children": [
+              {
+                "name": "装修装饰Ⅲ",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "服务业",
+    "children": [
+      {
+        "name": "非银金融",
+        "children": [
+          {
+            "name": "保险Ⅱ",
+            "children": [
+              {
+                "name": "保险Ⅲ",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "多元金融",
+            "children": [
+              {
+                "name": "金融控股",
+                "children": []
+              },
+              {
+                "name": "金融信息服务",
+                "children": []
+              },
+              {
+                "name": "期货",
+                "children": []
+              },
+              {
+                "name": "其他多元金融",
+                "children": []
+              },
+              {
+                "name": "信托",
+                "children": []
+              },
+              {
+                "name": "资产管理",
+                "children": []
+              },
+              {
+                "name": "租赁",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "证券Ⅱ",
+            "children": [
+              {
+                "name": "证券Ⅲ",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "公用事业",
+        "children": [
+          {
+            "name": "电力",
+            "children": [
+              {
+                "name": "电能综合服务",
+                "children": []
+              },
+              {
+                "name": "风力发电",
+                "children": []
+              },
+              {
+                "name": "光伏发电",
+                "children": []
+              },
+              {
+                "name": "核力发电",
+                "children": []
+              },
+              {
+                "name": "火力发电",
+                "children": []
+              },
+              {
+                "name": "其他能源发电",
+                "children": []
+              },
+              {
+                "name": "热力服务",
+                "children": []
+              },
+              {
+                "name": "水力发电",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "燃气Ⅱ",
+            "children": [
+              {
+                "name": "燃气Ⅲ",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "环保",
+        "children": [
+          {
+            "name": "环保设备Ⅱ",
+            "children": [
+              {
+                "name": "环保设备Ⅲ",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "环境治理",
+            "children": [
+              {
+                "name": "大气治理",
+                "children": []
+              },
+              {
+                "name": "固废治理",
+                "children": []
+              },
+              {
+                "name": "水务及水治理",
+                "children": []
+              },
+              {
+                "name": "综合环境治理",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "交通运输",
+        "children": [
+          {
+            "name": "航空机场",
+            "children": [
+              {
+                "name": "航空运输",
+                "children": []
+              },
+              {
+                "name": "机场",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "航运港口",
+            "children": [
+              {
+                "name": "港口",
+                "children": []
+              },
+              {
+                "name": "航运",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "铁路公路",
+            "children": [
+              {
+                "name": "高速公路",
+                "children": []
+              },
+              {
+                "name": "公交",
+                "children": []
+              },
+              {
+                "name": "铁路运输",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "物流",
+            "children": [
+              {
+                "name": "仓储物流",
+                "children": []
+              },
+              {
+                "name": "公路货运",
+                "children": []
+              },
+              {
+                "name": "跨境物流",
+                "children": []
+              },
+              {
+                "name": "快递",
+                "children": []
+              },
+              {
+                "name": "原材料供应链服务",
+                "children": []
+              },
+              {
+                "name": "中间产品及消费品供应链服务",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "商贸零售",
+        "children": [
+          {
+            "name": "互联网电商",
+            "children": [
+              {
+                "name": "电商服务",
+                "children": []
+              },
+              {
+                "name": "跨境电商",
+                "children": []
+              },
+              {
+                "name": "综合电商",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "旅游零售Ⅱ",
+            "children": [
+              {
+                "name": "旅游零售Ⅲ",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "贸易Ⅱ",
+            "children": [
+              {
+                "name": "贸易Ⅲ",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "一般零售",
+            "children": [
+              {
+                "name": "百货",
+                "children": []
+              },
+              {
+                "name": "超市",
+                "children": []
+              },
+              {
+                "name": "多业态零售",
+                "children": []
+              },
+              {
+                "name": "商业物业经营",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "专业连锁Ⅱ",
+            "children": [
+              {
+                "name": "专业连锁Ⅲ",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "社会服务",
+        "children": [
+          {
+            "name": "教育",
+            "children": [
+              {
+                "name": "教育运营及其他",
+                "children": []
+              },
+              {
+                "name": "培训教育",
+                "children": []
+              },
+              {
+                "name": "学历教育",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "酒店餐饮",
+            "children": [
+              {
+                "name": "餐饮",
+                "children": []
+              },
+              {
+                "name": "酒店",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "旅游及景区",
+            "children": [
+              {
+                "name": "旅游综合",
+                "children": []
+              },
+              {
+                "name": "人工景区",
+                "children": []
+              },
+              {
+                "name": "自然景区",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "体育Ⅱ",
+            "children": [
+              {
+                "name": "体育Ⅲ",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "专业服务",
+            "children": [
+              {
+                "name": "会展服务",
+                "children": []
+              },
+              {
+                "name": "检测服务",
+                "children": []
+              },
+              {
+                "name": "其他专业服务",
+                "children": []
+              },
+              {
+                "name": "人力资源服务",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "银行",
+        "children": [
+          {
+            "name": "城商行Ⅱ",
+            "children": [
+              {
+                "name": "城商行Ⅲ",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "股份制银行Ⅱ",
+            "children": [
+              {
+                "name": "股份制银行Ⅲ",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "国有大型银行Ⅱ",
+            "children": [
+              {
+                "name": "国有大型银行Ⅲ",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "农商行Ⅱ",
+            "children": [
+              {
+                "name": "农商行Ⅲ",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "综合",
+        "children": [
+          {
+            "name": "综合Ⅱ",
+            "children": [
+              {
+                "name": "综合Ⅲ",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "原材料",
+    "children": [
+      {
+        "name": "钢铁",
+        "children": [
+          {
+            "name": "普钢",
+            "children": [
+              {
+                "name": "板材",
+                "children": []
+              },
+              {
+                "name": "钢铁管材",
+                "children": []
+              },
+              {
+                "name": "长材",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "特钢Ⅱ",
+            "children": [
+              {
+                "name": "特钢Ⅲ",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "冶钢原料",
+            "children": [
+              {
+                "name": "铁矿石",
+                "children": []
+              },
+              {
+                "name": "冶钢辅料",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "煤炭",
+        "children": [
+          {
+            "name": "焦炭Ⅱ",
+            "children": [
+              {
+                "name": "焦炭Ⅲ",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "煤炭开采",
+            "children": [
+              {
+                "name": "动力煤",
+                "children": []
+              },
+              {
+                "name": "焦煤",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "有色金属",
+        "children": [
+          {
+            "name": "工业金属",
+            "children": [
+              {
+                "name": "铝",
+                "children": []
+              },
+              {
+                "name": "铅锌",
+                "children": []
+              },
+              {
+                "name": "铜",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "贵金属",
+            "children": [
+              {
+                "name": "白银",
+                "children": []
+              },
+              {
+                "name": "黄金",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "金属新材料",
+            "children": [
+              {
+                "name": "磁性材料",
+                "children": []
+              },
+              {
+                "name": "其他金属新材料",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "能源金属",
+            "children": [
+              {
+                "name": "钴",
+                "children": []
+              },
+              {
+                "name": "锂",
+                "children": []
+              },
+              {
+                "name": "镍",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "小金属",
+            "children": [
+              {
+                "name": "钼",
+                "children": []
+              },
+              {
+                "name": "其他小金属",
+                "children": []
+              },
+              {
+                "name": "钨",
+                "children": []
+              },
+              {
+                "name": "稀土",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "消费",
+    "children": [
+      {
+        "name": "家用电器",
+        "children": [
+          {
+            "name": "白色家电",
+            "children": [
+              {
+                "name": "冰洗",
+                "children": []
+              },
+              {
+                "name": "空调",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "厨卫电器",
+            "children": [
+              {
+                "name": "厨房电器",
+                "children": []
+              },
+              {
+                "name": "卫浴电器",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "黑色家电",
+            "children": [
+              {
+                "name": "彩电",
+                "children": []
+              },
+              {
+                "name": "其他黑色家电",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "家电零部件Ⅱ",
+            "children": [
+              {
+                "name": "家电零部件Ⅲ",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "其他家电Ⅱ",
+            "children": [
+              {
+                "name": "其他家电Ⅲ",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "小家电",
+            "children": [
+              {
+                "name": "厨房小家电",
+                "children": []
+              },
+              {
+                "name": "个护小家电",
+                "children": []
+              },
+              {
+                "name": "清洁小家电",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "照明设备Ⅱ",
+            "children": [
+              {
+                "name": "照明设备Ⅲ",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "美容护理",
+        "children": [
+          {
+            "name": "个护用品",
+            "children": [
+              {
+                "name": "生活用纸",
+                "children": []
+              },
+              {
+                "name": "洗护用品",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "化妆品",
+            "children": [
+              {
+                "name": "化妆品制造及其他",
+                "children": []
+              },
+              {
+                "name": "品牌化妆品",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "医疗美容",
+            "children": [
+              {
+                "name": "医美服务",
+                "children": []
+              },
+              {
+                "name": "医美耗材",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "农林牧渔",
+        "children": [
+          {
+            "name": "动物保健Ⅱ",
+            "children": [
+              {
+                "name": "动物保健Ⅲ",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "林业Ⅱ",
+            "children": [
+              {
+                "name": "林业Ⅲ",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "农产品加工",
+            "children": [
+              {
+                "name": "果蔬加工",
+                "children": []
+              },
+              {
+                "name": "粮油加工",
+                "children": []
+              },
+              {
+                "name": "其他农产品加工",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "农业综合Ⅱ",
+            "children": [
+              {
+                "name": "农业综合Ⅲ",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "饲料",
+            "children": [
+              {
+                "name": "宠物食品",
+                "children": []
+              },
+              {
+                "name": "畜禽饲料",
+                "children": []
+              },
+              {
+                "name": "水产饲料",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "养殖业",
+            "children": [
+              {
+                "name": "其他养殖",
+                "children": []
+              },
+              {
+                "name": "肉鸡养殖",
+                "children": []
+              },
+              {
+                "name": "生猪养殖",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "渔业",
+            "children": [
+              {
+                "name": "海洋捕捞",
+                "children": []
+              },
+              {
+                "name": "水产养殖",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "种植业",
+            "children": [
+              {
+                "name": "粮食种植",
+                "children": []
+              },
+              {
+                "name": "其他种植业",
+                "children": []
+              },
+              {
+                "name": "食用菌",
+                "children": []
+              },
+              {
+                "name": "种子",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "汽车",
+        "children": [
+          {
+            "name": "乘用车",
+            "children": [
+              {
+                "name": "电动乘用车",
+                "children": []
+              },
+              {
+                "name": "综合乘用车",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "摩托车及其他",
+            "children": [
+              {
+                "name": "摩托车",
+                "children": []
+              },
+              {
+                "name": "其他运输设备",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "汽车服务",
+            "children": [
+              {
+                "name": "汽车经销商",
+                "children": []
+              },
+              {
+                "name": "汽车综合服务",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "汽车零部件",
+            "children": [
+              {
+                "name": "车身附件及饰件",
+                "children": []
+              },
+              {
+                "name": "底盘与发动机系统",
+                "children": []
+              },
+              {
+                "name": "轮胎轮毂",
+                "children": []
+              },
+              {
+                "name": "其他汽车零部件",
+                "children": []
+              },
+              {
+                "name": "汽车电子电气系统",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "商用车",
+            "children": [
+              {
+                "name": "商用载货车",
+                "children": []
+              },
+              {
+                "name": "商用载客车",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "食品饮料",
+        "children": [
+          {
+            "name": "白酒Ⅱ",
+            "children": [
+              {
+                "name": "白酒Ⅲ",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "调味发酵品Ⅱ",
+            "children": [
+              {
+                "name": "调味发酵品Ⅲ",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "非白酒",
+            "children": [
+              {
+                "name": "啤酒",
+                "children": []
+              },
+              {
+                "name": "其他酒类",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "食品加工",
+            "children": [
+              {
+                "name": "保健品",
+                "children": []
+              },
+              {
+                "name": "肉制品",
+                "children": []
+              },
+              {
+                "name": "预加工食品",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "休闲食品",
+            "children": [
+              {
+                "name": "烘焙食品",
+                "children": []
+              },
+              {
+                "name": "零食",
+                "children": []
+              },
+              {
+                "name": "熟食",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "饮料乳品",
+            "children": [
+              {
+                "name": "乳品",
+                "children": []
+              },
+              {
+                "name": "软饮料",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "医药生物",
+        "children": [
+          {
+            "name": "化学制药",
+            "children": [
+              {
+                "name": "化学制剂",
+                "children": []
+              },
+              {
+                "name": "原料药",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "生物制品",
+            "children": [
+              {
+                "name": "其他生物制品",
+                "children": []
+              },
+              {
+                "name": "血液制品",
+                "children": []
+              },
+              {
+                "name": "疫苗",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "医疗服务",
+            "children": [
+              {
+                "name": "其他医疗服务",
+                "children": []
+              },
+              {
+                "name": "医疗研发外包",
+                "children": []
+              },
+              {
+                "name": "医院",
+                "children": []
+              },
+              {
+                "name": "诊断服务",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "医疗器械",
+            "children": [
+              {
+                "name": "体外诊断",
+                "children": []
+              },
+              {
+                "name": "医疗耗材",
+                "children": []
+              },
+              {
+                "name": "医疗设备",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "医药商业",
+            "children": [
+              {
+                "name": "线下药店",
+                "children": []
+              },
+              {
+                "name": "医药流通",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "中药Ⅱ",
+            "children": [
+              {
+                "name": "中药Ⅲ",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
