@@ -1,0 +1,119 @@
+# config.yaml
+
+# --- 大模型 API 配置 ---
+llm:
+  # 这里的 Key 建议不要提交到公开仓库，或者使用环境变量覆盖
+  api_key: "sk-fd28878bf42f456da34e71c11daa9a31"
+  base_url: "https://api.deepseek.com"
+  # model_name: "deepseek-chat"
+  model_name: "deepseek-reasoner"
+  temperature: 1.0
+
+# --- 市场数据配置 ---
+market:
+  # 1. 核心指数：用于判断大盘方向
+  indices:
+    - code: "sh.000001"
+      name: "上证指数"
+    - code: "sz.399001"
+      name: "深证成指"
+    - code: "sz.399006"
+      name: "创业板指"
+    - code: "sh.000300"
+      name: "沪深300"
+    - code: "sh.000688"
+      name: "科创50"
+
+  # 2. 宏观数据开关
+  macro:
+    enable: true
+    lookback_days: 90 # 宏观数据更新慢，需要往前多查几天
+
+  # 3. 重点观察个股（风向标）
+  focus_stocks:
+    - "sh.600519" # 贵州茅台 (白酒/消费龙头)
+    - "sz.300750" # 宁德时代 (新能源龙头)
+    - "sh.601318" # 中国平安 (金融龙头)
+    - "sh.601138" # 工业富联 (AI算力/科技)
+# ... (market, llm 等配置保持不变)
+
+report:
+  # ==========================================
+  # 1. 内容层 (Content Layer)
+  # 关注点：你是谁？你要分析什么数据？你的逻辑标准是什么？
+  # ==========================================
+  content_template: |
+    # Role
+    你是由 [DeepSeek Financial Intelligence] 驱动的首席量化策略分析师。
+    
+    # Task
+    请基于提供的交易数据，撰写一份日期为 {date} 的《A股市场深度复盘与量化策略日报》。
+    
+    # Data Context (Raw Data Tables)
+    
+    ## 1. 核心宽基指数 (Indices)
+    {market_indices}
+    
+    ## 2. 重点个股监控 (Key Stocks Watchlist)
+    {key_stocks}
+    
+    ## 3. 宏观环境
+    {macro_env}
+    
+    # Analysis Logic (Strict)
+    请基于上述【数据表格】进行逻辑推演：
+    
+    1. **指数分析**：不仅要看涨跌，还要结合 `PE(TTM)` 判断估值性价比。
+    2. **个股透视 (Deep Dive)**:
+       - 观察 {key_stocks} 表中的数据。
+       - **资金面**：重点关注 `成交额(亿)` 较大的个股，判断资金是否在抱团龙头。
+       - **情绪面**：结合 `涨跌幅` 和 `换手率`。如果个股大涨且换手率低，说明锁仓良好；如果高位放量滞涨，提示风险。
+       - **估值面**：对于 `PE(TTM)` 极高（如>50)的个股，评估其是否透支了成长性。
+    3. **策略结论**：将个股表现映射到板块（如：茅台涨->消费强，宁德涨->新能源强），给出具体的板块配置建议。
+
+  # ==========================================
+  # 2. 表现层 (Presentation Layer)
+  # 关注点：用什么符号？用什么排版结构？
+  # ==========================================
+  formats:
+    # --- Markdown 格式指令 ---
+    md: |
+      # Output Format: Markdown
+      请将上述分析内容整理为规范的 Markdown 格式：
+      
+      1. 使用一级标题 (#) 作为日报总标题。
+      2. 使用二级标题 (##) 区分以下章节：
+         - 📊 市场全景 (Market Dashboard)
+         - 🎯 风格与筹码 (Style & Alpha)
+         - 🧭 策略展望 (Investment Strategy)
+      3. 重点数据（如涨跌幅、成交额）请使用 **加粗** 标记。
+      4. 指数数据请保持原有的表格格式输出。
+
+    # --- LaTeX 格式指令 ---
+    # 注意：在 YAML 中使用 .format() 填充时，LaTeX 的原生大括号 {} 需要写成双大括号 {{ }} 来转义
+    latex: |
+      # Output Format: LaTeX
+      请将上述分析内容转化为标准的、可编译的 LaTeX 代码。
+      
+      ## 1. 文档结构设置
+      - 文档类：\documentclass{{article}}
+      - 宏包：\usepackage[UTF8]{{ctex}} (支持中文), \usepackage{{booktabs}} (三线表), \usepackage{{geometry}}
+      - 页面设置：\geometry{{a4paper, scale=0.8}}
+      
+      ## 2. 核心转换要求 (关键点)
+      - **文本转换**：将 Markdown 的章节结构转换为 \section{{...}}, \subsection{{...}}。
+      - **表格转换**:
+        - 必须将上下文中的 **Markdown 数据表格** 转换为 LaTeX 的 **table 环境**。
+        - 推荐使用三线表格式 (\toprule, \midrule, \bottomrule)。
+        - **重要**：请自动处理数据中的特殊符号转义（例如将 '涨跌幅+1.5%' 中的 '%' 转义为 '\%'）。
+      
+      ## 3. 样式细节
+      - 重点数据（如涨跌幅、成交额）使用 \textbf{{...}} 加粗。
+      - 红色/绿色涨跌幅可使用 \textcolor{{red}}{{...}} (需引入 xcolor 宏包)。
+      
+      ## 4. 输出约束
+      - 直接输出 LaTeX 源代码，**不要**包含 ```latex 的代码块标记。
+      - 确保代码可以被 pdflatex 或 xelatex 直接编译。
+
+websites:
+  Baostock: "http://baostock.com/mainContent?file=dataExplain.md#%E9%80%80%E5%B8%82%E6%95%B0%E6%8D%AE"

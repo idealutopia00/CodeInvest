@@ -1,0 +1,1 @@
+from .MarketReportGenerator import MarketReportGenerator

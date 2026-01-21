@@ -1,6 +1,12 @@
 import pandas as pd
 from collections import defaultdict
 import json
+import os
+import sys
+# 1. 获取当前脚本所在的目录
+script_dir = os.path.dirname(os.path.abspath(__file__))
+os.chdir(script_dir)
+print("work dir:", os.getcwd())
 
 def tree():
     return defaultdict(tree)
