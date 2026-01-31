@@ -93,81 +93,80 @@ class MarketReportGenerator:
 
     def _prepare_data(self):
         """
-        准备数据阶段：从数据源获取行情、估值、宏观等多维度数据。
+        [单函数完整版] 准备数据阶段：从数据源获取行情、估值、宏观等多维度数据。
+        包含了：指数、个股、板块ETF、宏观数据的完整获取与清洗逻辑。
         """
         print(f"[System] Connecting to Data Provider: {self.data_provider_class.__name__}...")
         
-        # 1. 实例化客户端 (无 with 上下文)
+        # 1. 实例化客户端
         client = self.data_provider_class()
-            
+        
         # 2. 确定目标日期
-        # (此时 client 只是一个普通对象，调用方法时会在内部自动 Login)
         self.date = self._get_latest_trading_date(client)
         print(f"[System] Target Date: {self.date}")
-        
-        # --- A. 获取指数数据 (增加估值维度) ---
+        self.data_context['date'] = self.date
+
+        # --- 全局 Pandas 设置：防止输出 "..." 省略号 ---
+        # 这一步至关重要，确保后续生成的 Markdown 表格是完整的
+        pd.set_option('display.max_rows', None)
+        pd.set_option('display.max_columns', None)
+        pd.set_option('display.width', 1000)
+
+        # ==========================================
+        # Part A. 获取核心指数数据 (Indices)
+        # ==========================================
         indices_config = self.config['market'].get('indices', [])
         indices_data = []
         
         for item in indices_config:
             code = item['code']
-            name = item['name']
             try:
-                # 获取日K线 + 估值指标 (peTTM, pbMRQ)
-                # adjustflag="3" 不复权，看真实的指数点位
+                # adjustflag="3": 不复权，看真实的指数点位
                 k_data = client.get_historical_k_data(
                     code=code, start_date=self.date, end_date=self.date,
                     frequency="d", adjust_flag="3", 
-                    fields=["close", "pctChg", "amount", "peTTM", "pbMRQ", "volume"]
+                    fields=["close", "pctChg", "amount", "peTTM", "pbMRQ"]
                 )
                 
                 if not k_data.empty:
                     row = k_data.iloc[0]
-                    # 数据清洗与格式化
-                    close = float(row['close'])
-                    pct_chg = float(row['pctChg']) if row['pctChg'] else 0.0
-                    amount = float(row['amount']) / 1e8 # 转为亿
-                    pe_ttm = float(row['peTTM']) if row['peTTM'] else 0.0
-                    pb_mrq = float(row['pbMRQ']) if row['pbMRQ'] else 0.0
-                    
                     indices_data.append({
-                        "名称": name,
-                        "收盘点位": f"{close:.2f}",
-                        "涨跌幅": f"{pct_chg:+.2f}%",
-                        "成交额(亿)": f"{amount:.1f}",
-                        "PE(TTM)": f"{pe_ttm:.1f}",
-                        "PB(MRQ)": f"{pb_mrq:.2f}"
+                        "名称": item['name'],
+                        "收盘": f"{float(row['close']):.2f}",
+                        "涨跌幅": f"{float(row['pctChg']):+.2f}%" if row['pctChg'] else "0.00%",
+                        "成交额(亿)": f"{float(row['amount'])/1e8:.1f}",
+                        "PE(TTM)": f"{float(row['peTTM']):.1f}" if row['peTTM'] else "-",
+                        "PB(MRQ)": f"{float(row['pbMRQ']):.2f}" if row['pbMRQ'] else "-"
                     })
             except Exception as e:
                 print(f"[Warn] Index {code} fetch failed: {e}")
 
-        # 将指数数据转为 Markdown 表格字符串，方便 LLM 理解
+        # 生成指数表格 (Markdown)
         if indices_data:
-            df_indices = pd.DataFrame(indices_data)
-            self.data_context['market_indices'] = df_indices.to_markdown(index=False)
+            try:
+                self.data_context['market_indices'] = pd.DataFrame(indices_data).to_markdown(index=False, tablefmt="pipe")
+            except Exception:
+                self.data_context['market_indices'] = str(indices_data)
         else:
-            self.data_context['market_indices'] = "暂无指数数据"
+            self.data_context['market_indices'] = "（暂无指数数据）"
 
-        # --- B. 获取重点个股数据 (作为市场情绪风向标) ---
+        # ==========================================
+        # Part B. 获取重点个股数据 (Key Stocks)
+        # ==========================================
         key_stocks = self.config['market'].get('focus_stocks', [])
         stocks_data_list = []
         
         for code in key_stocks:
             try:
-                # 1. 获取基础信息 (名称)
+                # 1. 获取名称 (优先用 code_name)
                 stock_name = code
                 try:
                     base_info = client.get_stock_basic_info(code)
                     if not base_info.empty:
-                        # 兼容不同字段名
-                        if 'code_name' in base_info.columns:
-                            stock_name = base_info.iloc[0]['code_name']
-                        elif 'name' in base_info.columns:
-                            stock_name = base_info.iloc[0]['name']
+                        stock_name = base_info.iloc[0].get('code_name', base_info.iloc[0].get('name', code))
                 except: pass
 
-                # 2. 获取行情 (多拿一些字段，把决定权交给 Prompt)
-                # fields 增加了 'amount' (成交额), 'turn' (换手率), 'peTTM' (估值)
+                # 2. 获取行情
                 k_data = client.get_historical_k_data(
                     code=code, start_date=self.date, end_date=self.date,
                     fields=["close", "pctChg", "amount", "turn", "peTTM"]
@@ -175,50 +174,115 @@ class MarketReportGenerator:
                 
                 if not k_data.empty:
                     row = k_data.iloc[0]
-                    # 构建原始数据字典
                     stocks_data_list.append({
                         "代码": code,
                         "名称": stock_name,
                         "现价": f"{float(row['close']):.2f}",
-                        "涨跌幅": f"{float(row['pctChg']):+.2f}%",
+                        "涨跌幅": f"{float(row['pctChg']):+.2f}%" if row['pctChg'] else "0.00%",
                         "换手率": f"{float(row['turn']):.2f}%" if row['turn'] else "-",
                         "成交额(亿)": f"{float(row['amount'])/1e8:.2f}",
                         "PE(TTM)": f"{float(row['peTTM']):.1f}" if row['peTTM'] else "-"
                     })
-                    
             except Exception as e:
                 print(f"[Warn] Stock {code} fetch failed: {e}")
 
-        # --- 核心改变：生成 Markdown 表格 ---
+        # 生成个股表格 (Markdown)
         if stocks_data_list:
-            df_stocks = pd.DataFrame(stocks_data_list)
-            # index=False 去掉 pandas 的行号
-            # tablefmt="pipe" 生成标准的 Markdown 表格
             try:
-                self.data_context['key_stocks'] = df_stocks.to_markdown(index=False, tablefmt="pipe")
-            except ImportError:
-                # 兜底
+                self.data_context['key_stocks'] = pd.DataFrame(stocks_data_list).to_markdown(index=False, tablefmt="pipe")
+            except Exception:
                 self.data_context['key_stocks'] = str(stocks_data_list)
         else:
             self.data_context['key_stocks'] = "（暂无重点个股数据）"
 
-        # --- C. 获取宏观数据 (新增：利率环境) ---
-        # 宏观数据不一定每天都有，所以我们找最近的一个值
-        macro_info = "暂无宏观数据"
+        # ==========================================
+        # Part C. 获取板块/行业 ETF 数据 (Sectors)
+        # ==========================================
+        sectors_config = self.config['market'].get('sectors', [])
+        sectors_data = []
+        
+        # 1. 获取基准涨跌幅 (上证指数，用于计算超额收益)
+        benchmark_pct = 0.0
+        try:
+            bench_k = client.get_historical_k_data(code="sh.000001", start_date=self.date, end_date=self.date, fields=["pctChg"])
+            if not bench_k.empty:
+                benchmark_pct = float(bench_k.iloc[0]['pctChg'])
+        except: pass
+        
+        # 2. 遍历板块配置
+        for item in sectors_config:
+            code = item['code']
+            try:
+                k_data = client.get_historical_k_data(
+                    code=code, start_date=self.date, end_date=self.date,
+                    frequency="d", adjust_flag="3", 
+                    fields=["close", "pctChg", "amount", "turn"]
+                )
+                
+                if not k_data.empty:
+                    row = k_data.iloc[0]
+                    pct = float(row['pctChg']) if row['pctChg'] else 0.0
+                    excess = pct - benchmark_pct # 超额收益 = 板块涨幅 - 大盘涨幅
+                    
+                    sectors_data.append({
+                        "板块名称": item['name'],
+                        "ETF代码": code,
+                        "涨跌幅": f"{pct:+.2f}%",
+                        "超额收益": f"{excess:+.2f}%", 
+                        "成交(亿)": f"{float(row['amount'])/1e8:.1f}",
+                        "换手率": f"{float(row['turn']):.2f}%" if row['turn'] else "-"
+                    })
+            except Exception as e:
+                print(f"[Warn] Sector {code} fetch failed: {e}")
+        
+        # 生成板块表格 (Markdown)
+        if sectors_data:
+            # 按涨跌幅降序排列，让热点一目了然
+            sectors_data.sort(key=lambda x: float(x['涨跌幅'].strip('%')), reverse=True)
+            try:
+                self.data_context['sector_performance'] = pd.DataFrame(sectors_data).to_markdown(index=False, tablefmt="pipe")
+            except Exception:
+                self.data_context['sector_performance'] = str(sectors_data)
+        else:
+            self.data_context['sector_performance'] = "（暂无板块数据）"
+
+        # ==========================================
+        # Part D. 获取宏观数据 (Macro Environment)
+        # ==========================================
+        macro_lines = []
         if self.config['market'].get('macro', {}).get('enable', False):
             try:
-                lookback = self.config['market']['macro'].get('lookback_days', 30)
-                start_dt = (datetime.datetime.strptime(self.date, "%Y-%m-%d") - datetime.timedelta(days=lookback)).strftime("%Y-%m-%d")
+                # 往前查 40 天，因为 LPR/M2 是月频数据
+                lookback_days = self.config['market']['macro'].get('lookback_days', 365)
+                start_dt = (datetime.datetime.strptime(self.date, "%Y-%m-%d") - datetime.timedelta(days=lookback_days)).strftime("%Y-%m-%d")
                 
-                # 获取贷款市场报价利率 (LPR) 作为一个宏观锚点
-                loan_rate = client.get_loan_rate_data(start_date=start_dt, end_date=self.date)
-                if not loan_rate.empty:
-                    latest = loan_rate.iloc[-1] # 取最近一次
-                    macro_info = f"最近一次报价日期: {latest['pubDate']}, 1年期LPR: {latest.get('loan_rate_1y', 'N/A')}%, 5年期LPR: {latest.get('loan_rate_5y', 'N/A')}%"
+                # 1. 利率数据 (LPR)
+                lpr_df = client.get_loan_rate_data(start_date=start_dt, end_date=self.date)
+                if not lpr_df.empty:
+                    latest = lpr_df.iloc[-1]
+                    lpr_str = f"1. **利率环境 (LPR)**: 最近报价日 {latest['pubDate']}，1年期 {latest.get('loan_rate_1y', '- ')}%，5年期 {latest.get('loan_rate_5y', '- ')}%。"
+                    macro_lines.append(lpr_str)
+                else:
+                    macro_lines.append("1. **利率环境**: 近期无 LPR 数据更新。")
+
+                # 2. 货币供应量 (M2)
+                m2_df = client.get_money_supply_data_month(start_date=start_dt, end_date=self.date)
+                if not m2_df.empty:
+                    latest = m2_df.iloc[-1]
+                    m2_str = f"2. **货币供应 (M2)**: {latest['statYear']}-{latest['statMonth']} M2同比增速 {float(latest['m2YOY']):.2f}%。"
+                    macro_lines.append(m2_str)
+                
+                # 3. 如果没抓到数据
+                if not macro_lines:
+                    macro_lines.append("（Baostock接口近期无宏观数据返回，建议参考央行官网）")
+
             except Exception as e:
                 print(f"[Warn] Macro data fetch failed: {e}")
+                macro_lines.append(f"宏观数据获取异常: {e}")
+        else:
+            macro_lines.append("（宏观数据分析已在配置中关闭）")
         
-        self.data_context['macro_env'] = macro_info
+        self.data_context['macro_env'] = "\n".join(macro_lines)
 
     def generate_llm_report(self):
         """
